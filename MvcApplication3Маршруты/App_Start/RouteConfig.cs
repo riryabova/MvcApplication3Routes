@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MvcApplication3Маршруты.App_Start;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -57,7 +58,8 @@ namespace MvcApplication3Маршруты
               defaults: new { controller = "product", action = "date", date = "25.03.2015", page = "1" },
                  constraints: new
                  {
-                     date = @"(0[1-9]|[12][0-9]|3[01])[-](0[1-9]|1[012])[-](19|20)\d\d",
+                     date = new productsRouteConstraint(),
+                     //date = @"(0[1-9]|[12][0-9]|3[01])[-](0[1-9]|1[012])[-](19|20)\d\d",
                      page = "[0-9]+"
                  }
               );
